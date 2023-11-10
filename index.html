@@ -1,1 +1,26 @@
-
+2 лаба
+<html>
+<head>
+<script>
+function array(){
+var array = document.forms["frm"].elements["N"].value.split(' ');
+for(let i = 0; i< array.length; i += 2){
+if(array[i + 1] && array[i]){
+let cacheElem = array[i];
+array[i] = array[i + 1];
+array[i + 1] = cacheElem;
+}
+}
+array.forEach(element => {
+document.writeln(element);
+});
+}
+</script>
+</head>
+<body>
+<form id="frm">
+<input type = "text" placeholder="Введите n" id = "N">
+<input type="button" onclick ="array()" value="Отправить">
+</form>
+</body>
+</html>
